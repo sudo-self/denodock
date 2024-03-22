@@ -27,7 +27,7 @@ async function handleRequest(request: Request) {
   }
 
   const getRandomWord = () => {
-    const words = ["text", "audio", "html", "json", "pdf"];
+    const words = ["text", "server", "html", "json", "pdf"];
     const randomIndex = Math.floor(Math.random() * words.length);
     return { word: words[randomIndex], color: getRandomDarkColor() };
   };
@@ -37,7 +37,7 @@ async function handleRequest(request: Request) {
       <head>
         <script>
           function rotateWords() {
-            const words = ["text", "server.ts", "html", "json", "pdf"];
+            const words = ["text", "server", "html", "json", "pdf"];
             let index = 0;
 
             setInterval(function() {
@@ -146,10 +146,10 @@ async function handleRequest(request: Request) {
 </center>
 <br>
          <center>
-  <a href="/server.ts" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-gray-900 bg-white hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-200 transition ease-in-out duration-150">
+  <a href="/server.ts" class="inline-flex items-center px-4 py-2 border border-gray-900 text-sm leading-5 font-medium rounded-md text-gray-900 bg-white hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-200 transition ease-in-out duration-150">
     <span class="inline-block"></span>
     <img src="https://api.iconify.design/fa6-solid:server.svg?color=%23669c35" alt="Server Icon" class="h-5 w-5 mx-2">
-    <span>server.ts</span>
+    <span>server</span>
   </a>
 </center>
 
@@ -157,15 +157,19 @@ async function handleRequest(request: Request) {
         </div>
          <center>
 
-        <center>
+ 
+ 
+
+
+        <center>🙋🏿‍♂️🙋🏽🙋🏻‍♀️🙋🏽🙋🏿‍♂️🙋🏽🙋🏻‍♀️🙋🏽🙋🏿‍♂️🙋🏽🙋🏻‍♀️🙋🏽
        <blockquote>
               <p>Imagine you're at a party, and you ask a friend to message the DJ across the room. In HTTP, your browser sends a request to a server asking to drop the bass. The DJ processes your request and sends back the track. This exchange is the essence of an HTTP request.</p>
             </blockquote></center>
-          <br>
+        
             <center><audio controls class="my-4">
               <source src="https://pub-090188261ed842a9ac0918908eb278e5.r2.dev/01%20codec%20ninja.mp3" type="audio/mpeg">
               Your browser does not support the audio element.</audio></center>
-          <center>  <br>
+          <center>
                     <a class="github-button" href="https://github.com/sudo-self/http-request" data-color-scheme="no-preference: dark_high_contrast; light: dark_high_contrast; dark: dark_high_contrast;" data-icon="octicon-star" data-size="large" aria-label="Star sudo-self/http-request on GitHub">Star</a></centered>
        <footer class="text-pink-400 text-center mt-auto py-4 w-full">deno-html-json.deno.dev&nbsp;&copy2024.</footer>
       </body> 
