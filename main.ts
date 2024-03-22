@@ -1,12 +1,24 @@
 import { listenAndServe } from "https://deno.land/std@0.111.0/http/server.ts";
 
 function getRandomDarkColor() {
-  const darkColors = ["#2C3E50", "#25b387", "#ffaabb", "#bc13fe", "#e9023a"]; 
+  const darkColors = ["#1150af", "#8F8AE0", "#7F8C8D", "#a32638", "#25b387"]; 
   return darkColors[Math.floor(Math.random() * darkColors.length)];
 }
 
 function handleRequest(request: Request) {
   const { pathname } = new URL(request.url);
+
+const endpoint = "https://formspree.io/f/xoqoykgp";
+const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+
+fetch(proxyUrl + endpoint)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Error fetching data:", error));
+
+
+ 
+
 
   if (pathname.startsWith("/html")) {
     const html = `
@@ -37,20 +49,19 @@ function handleRequest(request: Request) {
       <head>
         <script>
           function rotateWords() {
-            const words = ["text", "audio", "txt", "html", "json", "pdf", "csv"];
+            const words = ["text", "server.ts", "html", "json", "pdf"];
             let index = 0;
 
             setInterval(function() {
               const randomWord = words[index];
-              const randomColor = "${getRandomDarkColor()}"; // Get a new random color every rotation
-              document.getElementById("url").innerHTML = "deno-html-json.deno.dev/<span style='color: " + randomColor + ";'>" + randomWord + "</span>";
+              const randomColor = "${getRandomDarkColor()}"; 
+              document.getElementById("url").innerHTML = "deno-html-json.deno.dev/&nbsp;<span style='color: " + randomColor + ";'>" + randomWord + "</span>";
               index = (index + 1) % words.length;
             }, 1000);
           }
 
           rotateWords();
-          </script>
-
+        </script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
         <style>
           blockquote p {
@@ -73,10 +84,10 @@ function handleRequest(request: Request) {
       <body class="font-sans text-base bg-white flex flex-col justify-center items-center">
         <div class="w-full max-w-lg">
           <center><a class="github-button" href="https://github.com/sudo-self/http-request" data-color-scheme="no-preference: light_high_contrast; light: dark; dark: dark_high_contrast;" data-icon="octicon-star" data-size="large" aria-label="Star sudo-self/http-request on GitHub">Star</a></center>
-          <h2 class="text-3xl text-center my-8"><code><pre>GET /echo HTTP/1.1
- <p id="url">https://deno-html-json.deno.dev/<span style="color: ${getRandomDarkColor()};">${getRandomWord().word}</span></p>
-Accept: */*</pre></code><br>
-          </h2></center>
+          <h1 class="text-3xl text-center my-8"><code><pre>GET HTTP /1.1</pre></code><br><p id="url">deno-html-json.deno.dev/<span style="color: ${getRandomDarkColor()};">${getRandomWord().word}</span></p></h1>
+          <center><h2><a style="color:green">HTTP /1.1 200 OK</a></h2><hr><hr><br><br>
+          </h1>
+          
           <center>
             <div></div>
             <div></div>
@@ -86,11 +97,13 @@ Accept: */*</pre></code><br>
           </div>
           
           <center>
-          <div id="clock"></div>
+          </center>
+          <center>
+            <span class="text-gray-900"><a href="/text">🙋🏻‍♀️</span><img src="https://api.iconify.design/material-symbols:format-color-text-rounded.svg?color=%2353d5fd" alt="HTML Icon" class="inline h-5 w-5 mx-1">text</a>
           </center>
           <br>
           <center>
-            <span class="text-gray-500"><a href="/server.ts">🙋🏿‍♂️</span><img src="https://api.iconify.design/fa6-solid:server.svg?color=%23669c35" alt="HTML Icon" class="inline h-5 w-5 mx-1">server.ts</a>
+            <span class="text-gray-900"><a href="/server.ts">🙋🏿‍♂️</span><img src="https://api.iconify.design/fa6-solid:server.svg?color=%23669c35" alt="HTML Icon" class="inline h-5 w-5 mx-1">server.ts</a>
           </center>
           <br>
           <center>
@@ -99,14 +112,6 @@ Accept: */*</pre></code><br>
           <br>
           <center>
             <span class="text-green-500"><a href="/json">🙋🏽<img src="https://api.iconify.design/logos:json.svg?color=%23669c35" alt="JSON Icon" class="inline h-5 w-5 mx-1">json</a></span>
-          </center>
-          <br>
-          <center>
-            <span class="text-blue"><a href="/text">🙋🏿‍♂️</span><img src="https://api.iconify.design/material-symbols:format-color-text-rounded.svg?color=%2353d5fd" alt="HTML Icon" class="inline h-5 w-5 mx-1">text</a>
-          </center>
-          <br>
-            <center>
-            <span class="text-gray-500"><a href="https://pub-090188261ed842a9ac0918908eb278e5.r2.dev/01%20codec%20ninja.mp3">🙋🏻‍♀️<img src="https://api.iconify.design/ic:sharp-speaker.svg" alt="JSON Icon" class="inline h-5 w-5 mx-1">audio</a></span>
           </center>
         </div>
  
@@ -119,14 +124,10 @@ Accept: */*</pre></code><br>
           </center>
           <center><blockquote>
               <p>Imagine you're at a party, and you ask a friend to message the DJ across the room. In HTTP, your browser sends a request to a server asking to drop the bass. The DJ processes your request and sends back the track. This exchange is the essence of an HTTP request.</p>
-            </blockquote>
+            </blockquote><br><br>
 
-          <footer class="text-green-700 text-center mt-auto py-4 w-full">
-            <p><span class="text-black" id="wordCount">63 /256</span></p>
-          </footer>
-        </center>
-      </body>    
-    </html>
+      </body>   
+       </html>
   `;
 
   return new Response(response, { headers: { "content-type": "text/html; charset=UTF-8" } });
