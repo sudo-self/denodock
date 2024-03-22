@@ -49,7 +49,8 @@ function handleRequest(request: Request) {
           }
 
           rotateWords();
-        </script>
+          </script>
+
         <script async defer src="https://buttons.github.io/buttons.js"></script>
         <style>
           blockquote p {
@@ -72,9 +73,10 @@ function handleRequest(request: Request) {
       <body class="font-sans text-base bg-white flex flex-col justify-center items-center">
         <div class="w-full max-w-lg">
           <center><a class="github-button" href="https://github.com/sudo-self/http-request" data-color-scheme="no-preference: light_high_contrast; light: dark; dark: dark_high_contrast;" data-icon="octicon-star" data-size="large" aria-label="Star sudo-self/http-request on GitHub">Star</a></center>
-          <h1 class="text-3xl text-center my-8"><code><pre>http request</pre></code><br><p id="url">https://deno-html-json.deno.dev/<span style="color: ${getRandomDarkColor()};">${getRandomWord().word}</span></p>
-          </h1>
-          
+          <h2 class="text-3xl text-center my-8"><code><pre>GET /echo HTTP/1.1
+ <p id="url">https://deno-html-json.deno.dev/<span style="color: ${getRandomDarkColor()};">${getRandomWord().word}</span></p>
+Accept: */*</pre></code><br>
+          </h2></center>
           <center>
             <div></div>
             <div></div>
@@ -84,6 +86,7 @@ function handleRequest(request: Request) {
           </div>
           
           <center>
+          <div id="clock"></div>
           </center>
           <br>
           <center>
@@ -130,6 +133,5 @@ function handleRequest(request: Request) {
 }
 
 listenAndServe(":8000", handleRequest);
-
 
 
