@@ -1,7 +1,7 @@
 import { listenAndServe } from "https://deno.land/std@0.111.0/http/server.ts";
 
 function getRandomDarkColor() {
-  const darkColors = ["#2C3E50", "#25b387", "#ffaabb", "#bc13fe", "#5555ff"]; 
+  const darkColors = ["#2C3E50", "#25b387", "#ffaabb", "#bc13fe", "#e9023a"]; 
   return darkColors[Math.floor(Math.random() * darkColors.length)];
 }
 
@@ -37,7 +37,7 @@ function handleRequest(request: Request) {
       <head>
         <script>
           function rotateWords() {
-            const words = ["text", "audio", "txt", "html", "json", "pdf"];
+            const words = ["text", "audio", "txt", "html", "json", "pdf", "csv"];
             let index = 0;
 
             setInterval(function() {
@@ -99,7 +99,7 @@ function handleRequest(request: Request) {
           </center>
           <br>
           <center>
-            <span class="text-blue"><a href="/text">🙋🏻‍♀️</span><img src="https://api.iconify.design/material-symbols:format-color-text-rounded.svg?color=%2353d5fd" alt="HTML Icon" class="inline h-5 w-5 mx-1">text</a>
+            <span class="text-blue"><a href="/text">🙋🏿‍♂️</span><img src="https://api.iconify.design/material-symbols:format-color-text-rounded.svg?color=%2353d5fd" alt="HTML Icon" class="inline h-5 w-5 mx-1">text</a>
           </center>
           <br>
             <center>
@@ -119,7 +119,7 @@ function handleRequest(request: Request) {
             </blockquote>
 
           <footer class="text-green-700 text-center mt-auto py-4 w-full">
-            <p><span class="text-black" id="wordCount">/256</span></p>
+            <p><span class="text-black" id="wordCount">63 /256</span></p>
           </footer>
         </center>
       </body>    
@@ -130,7 +130,6 @@ function handleRequest(request: Request) {
 }
 
 listenAndServe(":8000", handleRequest);
-
 
 
 
