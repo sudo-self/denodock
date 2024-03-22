@@ -1,2 +1,3 @@
 ## <a href="https://one-byte-wonder.deno.dev">http request</a>&nbsp;
-<img width="1440" alt="Screenshot 2024-03-22 at 12 47 11 AM" src="https://github.com/sudo-self/http-request/assets/119916323/0b693591-91b5-497f-8e1e-12034ef23820">
+
+![Screenshot 2024-03-22 at 10 48 08 AM](https://github.com/sudo-self/http-request/assets/119916323/39b25c29-441b-454c-818f-b3c7de9b979c)
