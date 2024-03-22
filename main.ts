@@ -67,9 +67,9 @@ fetch(proxyUrl + endpoint)
           blockquote p {
             font-style: italic;
             text-align: center;
-            width: 50%;
+            width: 60%;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 20px;
             margin-top: 20px;
             background-image: linear-gradient(to bottom right, #4F46E5, #8F8AE0);
             color: white;
@@ -81,16 +81,15 @@ fetch(proxyUrl + endpoint)
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/daisyui@1.9.1/dist/full.css" rel="stylesheet">
       </head>
-      <body class="font-sans text-base bg-white flex flex-col justify-center items-center">
+        <body class="font-sans text-base bg-white flex flex-col justify-center items-center">
         <div class="w-full max-w-lg">
-          <center><a class="github-button" href="https://github.com/sudo-self/http-request" data-color-scheme="no-preference: light_high_contrast; light: dark; dark: dark_high_contrast;" data-icon="octicon-star" data-size="large" aria-label="Star sudo-self/http-request on GitHub">Star</a></center>
-          <h1 class="text-3xl text-center my-8"><code><pre>GET HTTP /1.1</pre></code><br><p id="url">deno-html-json.deno.dev/<span style="color: ${getRandomDarkColor()};">${getRandomWord().word}</span></p></h1>
+        <center><img src="https://dash.deno.com/assets/logo.svg" hieght="100px" width="100px"</img></center>
+         <h1 class="text-3xl text-center my-8"><code><pre>GET HTTP /1.1</pre></code><br><p id="url">deno-html-json.deno.dev/<span style="color: ${getRandomDarkColor()};">${getRandomWord().word}</span></p></h1>
           <center><h2><a style="color:green">HTTP /1.1 200 OK</a></h2><hr><hr><br><br>
           </h1>
           
           <center>
-            <div></div>
-            <div></div>
+    
           </center>
           <div class="container mx-auto text-center" "text-pink-500">
            
@@ -122,10 +121,12 @@ fetch(proxyUrl + endpoint)
               Your browser does not support the audio element.
             </audio>
           </center>
-          <center><blockquote>
+          <center>
+               <blockquote>
               <p>Imagine you're at a party, and you ask a friend to message the DJ across the room. In HTTP, your browser sends a request to a server asking to drop the bass. The DJ processes your request and sends back the track. This exchange is the essence of an HTTP request.</p>
-            </blockquote><br><br>
-
+            </blockquote></center>
+          <br>    <center><a class="github-button" href="https://github.com/sudo-self/http-request" data-color-scheme="no-preference: light_high_contrast; light: dark; dark: dark_high_contrast;" data-icon="octicon-star" data-size="large" aria-label="Star sudo-self/http-request on GitHub">Star</a></center>
+       <footer class="text-pink-400 text-center mt-auto py-4 w-full">deno-html-json.deno.dev&nbsp;&copy2024.</footer>
       </body>   
        </html>
   `;
