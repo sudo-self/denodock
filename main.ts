@@ -122,20 +122,37 @@ async function handleRequest(request: Request) {
         
           <center>
           </center>
-          <center>
-            <span class="text-gray-900"><a href="/text">🙋🏻‍♀️</span><img src="https://api.iconify.design/material-symbols:format-color-text-rounded.svg?color=%2353d5fd" alt="HTML Icon" class="inline h-5 w-5 mx-1">text</a>
-          </center>
+        <center>
+  <a href="/text" class="inline-flex items-center px-4 py-2 border border-gray-900 text-sm leading-5 font-medium rounded-md text-gray-900 bg-white hover:text-gray-700 hover:bg-gray-50 focus:outline-none focus:border-gray-300 focus:shadow-outline-blue active:bg-gray-200 transition ease-in-out duration-150">
+    <span class="inline-block"><img src="https://api.iconify.design/material-symbols:format-color-text-rounded.svg?color=%2353d5fd" alt="HTML Icon" class="h-5 w-5 mr-2"></span>
+    <span>text</span>
+  </a>
+</center>
+
           <br>
-          <center>
-            <span class="text-yellow-500"><a href="/html">🙋🏻‍♀️</span><img src="https://api.iconify.design/logos:html-5.svg?color=%23669c35" alt="HTML Icon" class="inline h-5 w-5 mx-1">html</a>
-          </center>
+        <center>
+  <a href="/html" class="inline-flex items-center px-4 py-2 border border-gray-900 text-sm leading-5 font-medium rounded-md text-yellow-500 bg-white hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:border-yellow-300 focus:shadow-outline-yellow active:bg-gray-200 transition ease-in-out duration-150">
+    <span class="inline-block"><img src="https://api.iconify.design/logos:html-5.svg?color=%23669c35" alt="HTML Icon" class="h-5 w-5 mr-2"></span>
+    <span>html</span>
+  </a>
+</center>
           <br>
-          <center>
-            <span class="text-green-500"><a href="/json">🙋🏽<img src="https://api.iconify.design/logos:json.svg?color=%23669c35" alt="JSON Icon" class="inline h-5 w-5 mx-1">json</a></span>
-          </center><br>
-           <center>
-            <span class="text-gray-900"><a href="/server.ts">🙋🏿‍♂️</span><img src="https://api.iconify.design/fa6-solid:server.svg?color=%23669c35" alt="HTML Icon" class="inline h-5 w-5 mx-1">server.ts</a>
-          </center>
+        <center>
+  <a href="/json" class="inline-flex items-center px-4 py-2 border border-gray-900 text-sm leading-5 font-medium rounded-md text-green-500 bg-white hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:border-green-300 focus:shadow-outline-green active:bg-gray-200 transition ease-in-out duration-150">
+    <span class="inline-block"></span>
+    <img src="https://api.iconify.design/logos:json.svg?color=%23669c35" alt="JSON Icon" class="h-5 w-5 mx-2">
+    <span>json</span>
+  </a>
+</center>
+<br>
+         <center>
+  <a href="/server.ts" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-gray-900 bg-white hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-200 transition ease-in-out duration-150">
+    <span class="inline-block"></span>
+    <img src="https://api.iconify.design/fa6-solid:server.svg?color=%23669c35" alt="Server Icon" class="h-5 w-5 mx-2">
+    <span>server.ts</span>
+  </a>
+</center>
+
           <br>
         </div>
          <center>
@@ -160,5 +177,6 @@ async function handleRequest(request: Request) {
 }
 
 listenAndServe(":8000", handleRequest);
+
 
 
