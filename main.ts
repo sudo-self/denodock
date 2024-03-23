@@ -37,7 +37,7 @@ const getRandomWord = () => {
 
 // do not touch this things will break //
  const getRandomDarkColor = () => {
-    const darkColors = ["#e9023a", "#8F8AE0", "#9d7aac", "#a32638", "#5e5b60"];
+  const darkColors = ["#7b1fa2", "#512da8", "#4527a0", "#311b92", "#673ab7"];
     return darkColors[Math.floor(Math.random() * darkColors.length)];
   };
  // do not touch this things will break //
@@ -74,10 +74,19 @@ const getRandomWord = () => {
 
 <style>
 
+/* Custom HR Style with Purple Color */
+hr.custom-hr {
+  border: none;
+  height: 2px; /* Adjust height as needed */
+  background-color: #7e57c2; /* Purple color */
+  margin: 20px 0; /* Adjust margin as needed */
+}
+
+
 .emojis {
-    font-size: 24px; /* Adjust size as needed */
-    margin-bottom: 1px; /* Reduce margin to reduce gap */
-    margin-top: 1px; /* Remove top margin */
+    font-size: 28px;
+    margin-bottom: 1px; 
+    margin-top: 1px; 
 }
 
 blockquote {
@@ -120,15 +129,15 @@ blockquote {
         
 
 
-        <body class="bg-gradient-to-br from-gray-100 to-gray-300 flex flex-col justify-center items-center">
+        <body class="bg-gradient-to-br from-gray-200 to-gray-500 flex flex-col justify-center items-center">
         <body class="font-sans text-base bg-white flex flex-col justify-center items-center">
         <div class="w-full max-w-lg">
         <center><img src="https://dash.deno.com/assets/logo.svg" hieght="100px" width="100px"</img></center>
          <h1 class="text-3xl text-center my-8"><code><pre>GET HTTP /1.1</pre></code><br><p id="url"><code>deno-html-json.deno.dev/<span style="color: ${getRandomDarkColor()};"><b>${getRandomWord().word}</code></span></b></p></h1>
          <h4 class="text-1xl text-center my-5"><code>Accept-Language: en-us</code></h4>
          <h4 class="text-1xl text-center my-5"><code>Cache-Control: no-cache</code></h4>
-         <h6 class="text-2x1 text-center my-8">HTTP /1.1<a style="color:green">&nbsp;200 OK</a></h6>
-         <hr><hr>
+         <h6 class="text-1x1 text-center text-green-950 my-8">HTTP /1.1&nbsp;<a style="color: #106b21">200 OK<hr><hr></a></h6>
+        
          </div>
 
 
@@ -197,7 +206,7 @@ blockquote {
 
         <!---FOOTER---->
 
-       <footer class="text-pink-400 text-center mt-auto py-4 w-full">deno-html-json.deno.dev&nbsp;&copy2024.</footer>
+       <footer class="text-zinc-950 text-center mt-auto py-4 w-full">deno-html-json.deno.dev&nbsp;&copy2024.</footer>
       </body> 
 
   </html>
@@ -209,5 +218,4 @@ blockquote {
 }
 
 listenAndServe(":8000", handleRequest);
-
 
