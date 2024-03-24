@@ -1,7 +1,11 @@
+// server.ts
+
 import { listenAndServe } from "https://deno.land/std@0.111.0/http/server.ts";
 
 async function handleRequest(request) {
     const { pathname } = new URL(request.url);
+
+ // dynamic functions
 
     if (pathname.startsWith("/html")) {
         const html = `
@@ -21,6 +25,12 @@ async function handleRequest(request) {
         return new Response(text, { headers: { "content-type": "text/plain; charset=UTF-8" } });
     }
 
+ 
+
+
+
+    // added logic for url display
+    
     const getRandomWord = () => {
         const words = ["text", "html", "json", "server", "pdf"];
         const randomIndex = Math.floor(Math.random() * words.length);
@@ -32,6 +42,9 @@ async function handleRequest(request) {
         return darkColors[Math.floor(Math.random() * darkColors.length)];
     };
 
+
+    //return html
+
     const response = `
    
 <html lang="en">
@@ -41,6 +54,14 @@ async function handleRequest(request) {
     <title>Deno HTML JSON</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+
+        .buttons-container {
+            margin-top: 10px; 
+        }
+          
+        #myiFrame {
+            border-radius: 10px; 
+        }
 
          .container {
             text-align: center;
@@ -77,8 +98,14 @@ async function handleRequest(request) {
         }
 
         .grid-item:hover {
-            background-color: #5f5d64;
+            background-color: rgba(178, 165, 211, 0.8); 
+            background-image: url('https://api.dicebear.com/8.x/adventurer/svg?seed=Felix');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
         }
+
+
 
         h1 {
             margin-top: 50px; 
@@ -100,8 +127,9 @@ async function handleRequest(request) {
     </style>
 </head>
 <body class="bg-gradient-to-br from-indigo-400 to-violet-700 flex flex-col justify-center items-center font-sans text-base bg-white"> 
-      <img id="avatarImage" src="https://api.dicebear.com/8.x/adventurer/svg?seed=Felix" height="400px" width="400px" alt="Deno Image">
-    <button onclick="generateAvatar()">GENERATE AVATAR</button>
+      <img id="avatarImage" src="https://api.dicebear.com/8.x/adventurer/svg?seed=Felix" height="240px" width="300px" alt="Deno Image">
+
+    
    <script>
         function generateAvatar() {
             const avatarImage = document.getElementById('avatarImage');
@@ -124,8 +152,8 @@ async function handleRequest(request) {
     <center><iframe id="myiFrame" src="" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="450px" width="450px" allowfullscreen></iframe></center>
  <div class="grid-item">
             <a href="/" onclick="updateIframe('https://maps/google.com')">
-                <img src="https://api.iconify.design/game-icons:barracks-tent.svg" alt="HTML Icon">
-                <span>Home</span>
+                <img src="https://api.iconify.design/material-symbols:bottom-panel-close-outline-sharp.svg?color=%23ff2600" alt="HTML Icon">
+                <span>close</span>
             </a>
   <div class="grid-item">
             <a href="#" onclick="updateIframe('https://tyson.jessejesse.com')">
@@ -147,6 +175,11 @@ async function handleRequest(request) {
             <a href="#" onclick="updateIframe('https://www.youtube.com/embed/dQw4w9WgXcQ')">
                 <img src="https://api.iconify.design/openmoji:youtube.svg" alt="YouTube Icon">
                 <span>YouTube</span>
+            </a>
+    <div class="grid-item">
+            <a href="#" onclick="generateAvatar()">
+                <img src="https://api.iconify.design/material-symbols:person-add.svg?color=%235e30eb" alt="YouTube Icon">
+                <span>New Avatar</span>
     </div>
   </div>
 <script>
@@ -213,7 +246,6 @@ async function handleRequest(request) {
     }
 </script>
 </body>
-</html>
 
 
 
