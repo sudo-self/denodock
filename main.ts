@@ -1,9 +1,12 @@
-import { listenAndServe } from "https://deno.land/std@0.111.0/http/server.ts";
+//server.ts
 
+import { listenAndServe } from "https://deno.land/std@0.111.0/http/server.ts";
 import { Time } from "https://denopkg.com/burhanahmeed/time.ts@v2.0.1/mod.ts";
 
 async function handleRequest(request) {
     const { pathname } = new URL(request.url);
+
+//dynamic funtion    
 
     if (pathname.startsWith("/html")) {
         const html = `
@@ -23,6 +26,8 @@ async function handleRequest(request) {
         return new Response(text, { headers: { "content-type": "text/plain; charset=UTF-8" } });
     }
 
+    //random logib
+
     const getRandomWord = () => {
         const words = ["text", "html", "json", "server", "pdf"];
         const randomIndex = Math.floor(Math.random() * words.length);
@@ -33,6 +38,9 @@ async function handleRequest(request) {
         const darkColors = ["fff", "#fff", "#fff", "#fff", "#fff"];
         return darkColors[Math.floor(Math.random() * darkColors.length)];
     };
+
+
+    //html
 
     const response = `
    
@@ -389,4 +397,3 @@ function showCurrentTime() {
 
 listenAndServe(":8000", handleRequest);
 
-listenAndServe(":8000", handleRequest);
