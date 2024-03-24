@@ -1,4 +1,3 @@
-
 import { listenAndServe } from "https://deno.land/std@0.111.0/http/server.ts";
 
 import { Time } from "https://denopkg.com/burhanahmeed/time.ts@v2.0.1/mod.ts";
@@ -387,5 +386,7 @@ function showCurrentTime() {
 
     return new Response(response, { headers: { "content-type": "text/html; charset=UTF-8" } });
 }
+
+listenAndServe(":8000", handleRequest);
 
 listenAndServe(":8000", handleRequest);
