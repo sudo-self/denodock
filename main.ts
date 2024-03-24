@@ -41,30 +41,15 @@ async function handleRequest(request) {
     <title>Deno HTML JSON</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        blockquote {
-            font-style: italic;
-            text-align: center;
-            width: 50%;
-            padding: 10px;
-            border-radius: 20px;
-            margin-top: 1px;
-            background-image: linear-gradient(to bottom right, #4F46E5, #8F8AE0);
-            color: white;
-        }
 
-        .container {
+         .container {
             text-align: center;
             margin-top: 1px;
-        }
-
-        #time {
-            font-size: 24px;
-            margin-top: 20px;
         }
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 20px;
         }
 
@@ -82,7 +67,7 @@ async function handleRequest(request) {
         }
 
         .grid-item:hover {
-            background-color: #708090;
+            background-color: #4fdce1;
         }
 
         .grid-item img {
@@ -91,16 +76,51 @@ async function handleRequest(request) {
             margin-right: 5px;
         }
 
+        .grid-item:hover {
+            background-color: #5f5d64;
+        }
+
         h1 {
             margin-top: 50px; 
             font-size: 3rem; 
         }
 
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+            .grid-item {
+                font-size: 0.8rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
     </style>
 </head>
 <body class="bg-gradient-to-br from-indigo-400 to-violet-700 flex flex-col justify-center items-center font-sans text-base bg-white"> 
-    <img src="https://pub-c1de1cb456e74d6bbbee111ba9e6c757.r2.dev/ddddeno%20copy.png" height="400px" width="400px" alt="Deno Image">
-    <h5 class="text-2xl"><code id="url">deno-html-json.deno.dev/<span id="word"></span></code></h5>
+      <img id="avatarImage" src="https://api.dicebear.com/8.x/adventurer/svg?seed=Felix" height="400px" width="400px" alt="Deno Image">
+    <button onclick="generateAvatar()">GENERATE AVATAR</button>
+   <script>
+        function generateAvatar() {
+            const avatarImage = document.getElementById('avatarImage');
+            const seed = generateRandomSeed();
+            avatarImage.src = 'https://api.dicebear.com/8.x/adventurer/svg?seed=' + seed;
+        }
+
+        function generateRandomSeed() {
+            const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let seed = '';
+
+            for (let i = 0; i < 10; i++) {
+                seed += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+
+            return seed;
+        }
+    </script>
+    <h5 class="text-2xl"><code id="url">deno.dev/<span id="word"></span></code></h5>
     <center><iframe id="myiFrame" src="" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="450px" width="450px" allowfullscreen></iframe></center>
  <div class="grid-item">
             <a href="/" onclick="updateIframe('https://maps/google.com')">
@@ -172,10 +192,10 @@ async function handleRequest(request) {
         wordElement.style.color = randomColor;
     }
 
-    // Initial update
+    
     updateWord();
 
-    // Update word periodically
+    
     setInterval(updateWord, 1000);
 
     function openGoogleMaps() {
@@ -204,3 +224,4 @@ async function handleRequest(request) {
 }
 
 listenAndServe(":8000", handleRequest);
+
