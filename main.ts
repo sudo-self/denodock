@@ -1,11 +1,9 @@
-// server.ts
-
 import { listenAndServe } from "https://deno.land/std@0.111.0/http/server.ts";
+
+import { Time } from "https://denopkg.com/burhanahmeed/time.ts@v2.0.1/mod.ts";
 
 async function handleRequest(request) {
     const { pathname } = new URL(request.url);
-
- // dynamic functions
 
     if (pathname.startsWith("/html")) {
         const html = `
@@ -25,12 +23,6 @@ async function handleRequest(request) {
         return new Response(text, { headers: { "content-type": "text/plain; charset=UTF-8" } });
     }
 
- 
-
-
-
-    // added logic for url display
-    
     const getRandomWord = () => {
         const words = ["text", "html", "json", "server", "pdf"];
         const randomIndex = Math.floor(Math.random() * words.length);
@@ -43,8 +35,6 @@ async function handleRequest(request) {
     };
 
 
-    //return html
-
     const response = `
    
 <html lang="en">
@@ -54,7 +44,19 @@ async function handleRequest(request) {
     <title>Deno HTML JSON</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+      
+ #avatarContainer {
+            text-align: center;
+        }
 
+        #avatarImage {
+            margin-bottom: 20px;
+        }
+
+        #myiFrame {
+            border-radius: 10px;
+            display: none; /* Initially hide the iframe */
+        }
         .buttons-container {
             margin-top: 10px; 
         }
@@ -97,8 +99,9 @@ async function handleRequest(request) {
             margin-right: 5px;
         }
 
+       
         .grid-item:hover {
-            background-color: rgba(178, 165, 211, 0.8); 
+            background-color: rgba(178, 165, 211, 0.8); /* Semi-transparent background color */
             background-image: url('https://api.dicebear.com/8.x/adventurer/svg?seed=Felix');
             background-repeat: no-repeat;
             background-position: center center;
@@ -126,10 +129,26 @@ async function handleRequest(request) {
 
     </style>
 </head>
-<body class="bg-gradient-to-br from-indigo-400 to-violet-700 flex flex-col justify-center items-center font-sans text-base bg-white"> 
-      <img id="avatarImage" src="https://api.dicebear.com/8.x/adventurer/svg?seed=Felix" height="240px" width="300px" alt="Deno Image">
+<body class="bg-gradient-to-br from-indigo-400 to-violet-700 flex flex-col justify-center items-center font-sans text-base bg-white">
+ <h2 class="text-2xl"><code id="url">deno.dev/<span id="word"></span></code></h2> 
+ <img id="avatarImage" src="https://api.dicebear.com/8.x/adventurer/svg?seed=Felix" height="260px" width="300px" alt="Deno Image">
+ <div id="timeDisplay"></div>
+ <script>
+        function updateTime() {
+            const currentTime = new Date();
+            const options = { hour12: false };
+            const timeString = currentTime.toLocaleTimeString('en-US', options);
+            const timeDisplay = document.getElementById('timeDisplay');
+            timeDisplay.textContent = timeString;
+        }
 
-    
+        updateTime(); // Call updateTime function to initially display the time
+
+        setInterval(updateTime, 1000); // Update time every second
+    </script>
+
+
+
    <script>
         function generateAvatar() {
             const avatarImage = document.getElementById('avatarImage');
@@ -148,9 +167,9 @@ async function handleRequest(request) {
             return seed;
         }
     </script>
-    <h5 class="text-2xl"><code id="url">deno.dev/<span id="word"></span></code></h5>
+   
     <center><iframe id="myiFrame" src="" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="450px" width="450px" allowfullscreen></iframe></center>
- <div class="grid-item">
+     <div class="grid-item">
             <a href="/" onclick="updateIframe('https://maps/google.com')">
                 <img src="https://api.iconify.design/material-symbols:bottom-panel-close-outline-sharp.svg?color=%23ff2600" alt="HTML Icon">
                 <span>close</span>
@@ -182,6 +201,8 @@ async function handleRequest(request) {
                 <span>New Avatar</span>
     </div>
   </div>
+  <center> <div id="timeDisplay"></div></center>
+
 <script>
     function updateIframe(url) {
         document.getElementById('myiFrame').src = url;
@@ -246,6 +267,7 @@ async function handleRequest(request) {
     }
 </script>
 </body>
+</html>
 
 
 
@@ -256,4 +278,3 @@ async function handleRequest(request) {
 }
 
 listenAndServe(":8000", handleRequest);
-
