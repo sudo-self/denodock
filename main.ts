@@ -1,3 +1,4 @@
+
 import { listenAndServe } from "https://deno.land/std@0.111.0/http/server.ts";
 
 import { Time } from "https://denopkg.com/burhanahmeed/time.ts@v2.0.1/mod.ts";
@@ -201,19 +202,21 @@ async function handleRequest(request) {
 <nav>
 <ul>
 <li>
-<h1 class="justify-center items-center font-sans text-3x1">
-deno.dev</h1></li>
+<h1 class="fixed left-0 right-0 top-0 text-3x1">
+deno.dev</h1>
+</li>
 </ul>
 </nav>
 <div>
 <span id="timeDisplay" class="text-green-500"></span>
 </div>
+</header>
 
-    </header>
+
+
 <body class="bg-gradient-to-br from-gray-900 to-gray-700 flex flex-col justify-center items-center font-sans text-base bg-white">
- 
 <img id="avatarImage" src="https://api.dicebear.com/8.x/adventurer/svg?seed=Felix" height="240px" width="300px" alt="Deno Image">
-
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
 <a href="/" onclick="updateIframe('https://deno-html-json.deno.dev')">
 <img src="https://api.iconify.design/logos:deno.svg?color=%2300f900" alt="deno Icon"><span class="text-green-500">dock</span>
 </div>
@@ -266,12 +269,12 @@ deno.dev</h1></li>
   <div class="grid-item">
             <a href="#" onclick="updateIframe('https://tyson.jessejesse.com')">
                 <img src="https://api.iconify.design/game-icons:mailed-fist.svg?color=%231a0a53" alt="HTML Icon">
-                <span>NES</span>
+                <span>Games</span>
             </a> 
  <div class="grid-item">
-            <a href="#" onclick="updateIframe('https://amazing.jessejesse.com')">
-                <img src="https://api.iconify.design/arcticons:maze.svg" alt="HTML Icon">
-                <span>Amaze</span>
+            <a href="#" onclick="updateIframe('https://www.google.com/search?igu=1')">
+                <img src="https://api.iconify.design/logos:google-icon.svg?color=%2300f900" alt="HTML Icon">
+                <span>Google</span>
             </a>
     <div class="grid-item">
             <a href="#" onclick="updateIframe('https://random.jessejesse.com')">
@@ -373,7 +376,7 @@ function showCurrentTime() {
 
 <footer class="text-center">
     <p>
-        <a href="/" class="text-green-500">deno-html-json.deno.dev</a>
+        <a href="/" class="text-gray-400">deno-html-json.deno.dev</a>
     </p>
 </footer>
 
