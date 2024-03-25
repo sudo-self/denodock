@@ -182,7 +182,6 @@ async function handleRequest(request) {
         </ul>
     </nav>
     <div class="flex flex-col items-center">
-        <div id="timeDisplay" class="text-gray-400 z-20"></div>
     </div>
     <a class="github-button" href="https://github.com/sudo-self/http-request" data-color-scheme="no-preference: light; light: light; dark: light_high_contrast;" data-icon="octicon-star" data-size="large" aria-label="Star sudo-self/http-request on GitHub">Star</a>
 </header>
@@ -196,7 +195,8 @@ async function handleRequest(request) {
     <img id="avatarImage" src="https://api.dicebear.com/8.x/adventurer/svg?seed=Felix" height="240px" width="300px" alt="Deno Image">
     <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <div>
-            <div class="flex flex-col items-center">
+<!--time-date--><div id="timeDisplay" class="text-gray-400 z-20"></div>
+              <div class="flex flex-col items-center">
 <!-"/" close iframe--->   <a href="/" onclick="updateIframe('https://deno-html-json.deno.dev')">
 <!-- svg---->   <img src="https://api.iconify.design/formkit:down.svg?color=%23f5ec00" alt="Caretdown Icon" class="h-6 w-6">
                </a>
