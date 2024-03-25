@@ -184,7 +184,7 @@ async function handleRequest(request) {
     <div>
    <div class="flex flex-col items-center">
     </div>
-        <div id="timeDisplay" class="text-gray-400"></div>  <!------date time ------->
+ 
     </div>
    <a class="github-button" href="https://github.com/sudo-self/http-request" data-color-scheme="no-preference: light; light: light; dark: light_high_contrast;" data-icon="octicon-star" data-size="large" aria-label="Star sudo-self/http-request on GitHub">Star</a>
 </header
@@ -299,8 +299,8 @@ async function handleRequest(request) {
 
 
  <!----- 5 dock apps css class grid-items------App labels place in span------------->
-
-  <div class="grid-item">
+  <center> <div id="timeDisplay" class="text-gray-400"></div></center>
+   <div class="grid-item">
             <a href="#" onclick="updateIframe('https://nes.jessejesse.com')">
                 <img src="https://api.iconify.design/mdi:nintendo-game-boy.svg?color=%2300f900" alt="YouTube Icon">
                 <span></span>
