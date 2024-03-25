@@ -119,7 +119,7 @@ async function handleRequest(request) {
             gap: 20px;
         }
 
-       /* dock demensions */
+       /* dock size */
 
         .grid-item {
             display: flex;
@@ -135,7 +135,7 @@ async function handleRequest(request) {
         }
 
 
-       /* dock demensions */
+       /* dock size */
 
        .grid-item img {
             width: 20px;
@@ -144,7 +144,7 @@ async function handleRequest(request) {
         }
        
 
-         /* this is the dock */
+        /* dock on hover */
     
         .grid-item:hover {
             background-color: rgba(178, 165, 211, 0.8); 
@@ -159,7 +159,7 @@ async function handleRequest(request) {
             font-size: 3rem; 
         }
 
-         /* friendly style for mobile devices */
+         /* adjustment for mobile devices */
 
          @media (max-width: 768px) {
             .grid-container {
@@ -209,7 +209,7 @@ async function handleRequest(request) {
             <li>
                 <h1 class="fixed left-0 right-0 top-0 text-3xl text-center">
                     <code id="url">
-                        deno.dev/<span id="word"></span>
+                        deno.dev/<span id="word"></span> <!----word rotation id=url--->
                     </code>
                 </h1>
             </li>
@@ -218,32 +218,33 @@ async function handleRequest(request) {
     <div>
         <div class="flex flex-col items-center">
         </div>
-        <div id="timeDisplay" class="text-gray-400"></div>
+        <div id="timeDisplay" class="text-gray-400"></div>  <!------date time ------->
     </div>
 </header>
 
-
+<!-------dicebear API ----------------->
+<!-------tailwind CDN ----------------->
 
 <body class="bg-gradient-to-br from-gray-900 to-gray-700 flex flex-col justify-center items-center font-sans text-base bg-white">
     <img id="avatarImage" src="https://api.dicebear.com/8.x/adventurer/svg?seed=Felix" height="240px" width="300px" alt="Deno Image">
     <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <div>
             <div class="flex flex-col items-center">
-                <a href="/" onclick="updateIframe('https://deno-html-json.deno.dev')">
-                    <img src="https://api.iconify.design/formkit:down.svg?color=%23f5ec00" alt="Caretdown Icon" class="h-6 w-6">
-                </a>
-            </div>
+<!--"/" close---->     <a href="/" onclick="updateIframe('https://deno-html-json.deno.dev')">
+<!-- down svg---->   <img src="https://api.iconify.design/formkit:down.svg?color=%23f5ec00" alt="Caretdown Icon" class="h-6 w-6">
+               </a>
+         </div>
 
 
 <script>
     const getRandomWord = () => {
-        const words = ["text", "dev.to", "json", "server", "playground"];
+        const words = ["text", "dev.to", "json", "server", "playground"];      //can change words here//
         const randomIndex = Math.floor(Math.random() * words.length);
         return { word: words[randomIndex], color: getRandomDarkColor() };
     };
 
     const getRandomDarkColor = () => {
-        const darkColors = ["#25b387", "#25b387", "#25b387", "#25b287", "#25b387"];
+        const darkColors = ["#25b387", "#25b387", "#25b387", "#25b287", "#25b387"];  //made them green x1 per word//
         return darkColors[Math.floor(Math.random() * darkColors.length)];
     };
 
@@ -259,7 +260,7 @@ async function handleRequest(request) {
 
     updateWord();
 
-    setInterval(updateWord, 800); //time for words
+    setInterval(updateWord, 800); //time for words to rotate 1000= one second//
 </script>
 
 
@@ -325,7 +326,7 @@ async function handleRequest(request) {
             </a>
 
 
- <!----- dock apps ------------------------------------------------->
+ <!----- 5 dock apps css class "grid-items"  ------App labels place in span----->app name<---------->
 
   <div class="grid-item">
             <a href="#" onclick="updateIframe('https://tyson.jessejesse.com')">
@@ -352,6 +353,10 @@ async function handleRequest(request) {
                 <img src="https://api.iconify.design/openmoji:youtube.svg" alt="YouTube Icon">
                 <span></span>
             </a>
+
+<!-----this button to generate new avatar ------------------------------->
+
+
     <div class="grid-item">
             <a href="#" onclick="generateAvatar()">
                 <img src="https://api.iconify.design/logos:deno.svg?color=%23aaaaaa" alt="deno Icon">
@@ -359,21 +364,7 @@ async function handleRequest(request) {
             </a>
      </div>
 
-
-<!---------- date time --------------->
-
-<script>
-    function showCurrentTime() {
-        var currentTime = new Date();
-        var hours = currentTime.getHours();
-        var minutes = currentTime.getMinutes();
-        var timeDisplay = document.getElementById("timeDisplay");
-        var formattedMinutes = (minutes < 10 ? "0" : "") + minutes;
-        timeDisplay.textContent = "Welcome! The current time is: " + hours + ":" + formattedMinutes;
-    }
-</script>
-
-
+<!-----iframe logic do not touch --------------------------------------->
 
 <script>
 
@@ -381,7 +372,7 @@ async function handleRequest(request) {
         document.getElementById('myiFrame').src = url;
     }
 </script>
- <div>
+ 
 </body>
 </html>
 
@@ -403,6 +394,8 @@ async function handleRequest(request) {
         }
     }
 </script>
+
+
 
 <footer class="text-center">
     <p>
