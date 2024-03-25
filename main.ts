@@ -369,7 +369,7 @@ async function handleRequest(request) {
 
 <footer>
      <p>
-        <a href="/" class="text-gray-400">denodock.deno.dev&nbsp;&copy2024</a>
+        <a href="/" class="text-gray-400">denodock.deno.dev&nbsp;</a><a style="color:#eecd00">&copy2024</a>
     </p>
 </footer>
 
