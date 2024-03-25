@@ -298,7 +298,7 @@ async function handleRequest(request) {
  <!----- 5 dock apps css class grid-items------App labels place in span------------->
 
   <div class="grid-item">
-            <a href="#" onclick="updateIframe('https://tyson.jessejesse.com')">
+            <a href="#" onclick="updateIframe('https://nes.jessejesse.com')">
                 <img src="https://api.iconify.design/mdi:nintendo-game-boy.svg?color=%237a7a7a" alt="YouTube Icon">
                 <span></span>
             </a>
@@ -313,7 +313,7 @@ async function handleRequest(request) {
                 <span></span>
             </a>
     <div class="grid-item">
-            <a href="#" onclick="updateIframe('https://random.jessejesse.com')">
+            <a href="#" onclick="updateIframe('https://ghost.jessejesse.com')">
                 <img src="https://api.iconify.design/game-icons:chat-bubble.svg?color=%231a0a53" alt="YouTube Icon">
                 <span></span>
             </a>
