@@ -24,7 +24,7 @@ async function handleRequest(request) {
     }
 
     const getRandomWord = () => {
-        const words = ["text", "html", "json", "server", "pdf"];
+        const words = ["text", "html", "json", "server", "playground"];
         const randomIndex = Math.floor(Math.random() * words.length);
         return { word: words[randomIndex], color: getRandomDarkColor() };
     };
@@ -201,24 +201,32 @@ async function handleRequest(request) {
 <nav>
 <ul>
 <li>
-<h1 class="fixed left-0 right-0 top-0 text-3x1"><code id="url">deno.dev/<span id="word"></span></code></center></h1>
+<h1 class="fixed left-0 right-0 top-0 text-3xl text-center">
+    <code id="url">
+        deno.dev/<span id="word"></span>
+    </code>
+</h1>
 </li>
 </ul>
 </nav>
 <div>
-<span id="timeDisplay" class="text-green-500"></span>
+<div class="flex flex-col items-center">
+    </div>
+    <div id="timeDisplay" class="text-green-500"></div>
 </div>
+
 </header>
-
-
-
 <body class="bg-gradient-to-br from-gray-900 to-gray-700 flex flex-col justify-center items-center font-sans text-base bg-white">
 <img id="avatarImage" src="https://api.dicebear.com/8.x/adventurer/svg?seed=Felix" height="240px" width="300px" alt="Deno Image">
 <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-<a href="/" onclick="updateIframe('https://deno-html-json.deno.dev')">
-<img src="https://api.iconify.design/logos:deno.svg?color=%2300f900" alt="deno Icon"><span class="text-green-500">dev</span>
+<div>
+<div class="flex flex-col items-center">
+ <a href="/" onclick="updateIframe('https://deno-html-json.deno.dev')">
+    <img src="https://api.iconify.design/formkit:down.svg?color=%23f5ec00" alt="Caretdown Icon" class="h-6 w-6">
 </div>
-</div>
+
+</a>
+
 <script>
     const getRandomWord = () => {
         const words = ["text", "html", "json", "server", "pdf"];
@@ -296,7 +304,7 @@ async function handleRequest(request) {
         }
     </script>
    
-     <center><iframe id="myiFrame" src="" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="450px" width="450px" allowfullscreen></iframe></center>
+     <center><iframe id="myiFrame" src="" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="1" marginheight="0px" marginwidth="0px" height="450px" width="450px" allowfullscreen></iframe></center>
   <div class="grid-item">
             <a href="#" onclick="updateIframe('https://tyson.jessejesse.com')">
                 <img src="https://api.iconify.design/game-icons:mailed-fist.svg?color=%231a0a53" alt="HTML Icon">
@@ -319,7 +327,7 @@ async function handleRequest(request) {
             </a>
     <div class="grid-item">
             <a href="#" onclick="generateAvatar()">
-                <img src="https://api.iconify.design/material-symbols:person-add.svg?color=%235e30eb" alt="YouTube Icon">
+                <img src="https://api.iconify.design/logos:deno.svg?color=%23aaaaaa" alt="deno Icon">
                 <span>New Avatar</span>
             </a>
      </div>
