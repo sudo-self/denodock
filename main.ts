@@ -1,12 +1,9 @@
-//server.ts
-
 import { listenAndServe } from "https://deno.land/std@0.111.0/http/server.ts";
+
 import { Time } from "https://denopkg.com/burhanahmeed/time.ts@v2.0.1/mod.ts";
 
 async function handleRequest(request) {
     const { pathname } = new URL(request.url);
-
-//dynamic funtion    
 
     if (pathname.startsWith("/html")) {
         const html = `
@@ -26,8 +23,6 @@ async function handleRequest(request) {
         return new Response(text, { headers: { "content-type": "text/plain; charset=UTF-8" } });
     }
 
-    //random logib
-
     const getRandomWord = () => {
         const words = ["text", "html", "json", "server", "pdf"];
         const randomIndex = Math.floor(Math.random() * words.length);
@@ -38,9 +33,6 @@ async function handleRequest(request) {
         const darkColors = ["fff", "#fff", "#fff", "#fff", "#fff"];
         return darkColors[Math.floor(Math.random() * darkColors.length)];
     };
-
-
-    //html
 
     const response = `
    
@@ -209,8 +201,7 @@ async function handleRequest(request) {
 <nav>
 <ul>
 <li>
-<h1 class="fixed left-0 right-0 top-0 text-3x1">
-deno.dev</h1>
+<h1 class="fixed left-0 right-0 top-0 text-3x1"><code id="url">deno.dev/<span id="word"></span></code></center></h1>
 </li>
 </ul>
 </nav>
@@ -225,9 +216,42 @@ deno.dev</h1>
 <img id="avatarImage" src="https://api.dicebear.com/8.x/adventurer/svg?seed=Felix" height="240px" width="300px" alt="Deno Image">
 <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
 <a href="/" onclick="updateIframe('https://deno-html-json.deno.dev')">
-<img src="https://api.iconify.design/logos:deno.svg?color=%2300f900" alt="deno Icon"><span class="text-green-500">dock</span>
+<img src="https://api.iconify.design/logos:deno.svg?color=%2300f900" alt="deno Icon"><span class="text-green-500">dev</span>
 </div>
 </div>
+<script>
+    const getRandomWord = () => {
+        const words = ["text", "html", "json", "server", "pdf"];
+        const randomIndex = Math.floor(Math.random() * words.length);
+        return { word: words[randomIndex], color: getRandomDarkColor() };
+    };
+
+    const getRandomDarkColor = () => {
+        const darkColors = ["#25b387", "#25b387", "#25b387", "#25b287", "#25b387"];
+        return darkColors[Math.floor(Math.random() * darkColors.length)];
+    };
+
+    function updateWord() {
+        const wordElement = document.getElementById('word');
+        const randomWordObject = getRandomWord();
+        const randomWord = randomWordObject.word;
+        const randomColor = randomWordObject.color;
+
+        wordElement.textContent = randomWord;
+        wordElement.style.color = randomColor;
+    }
+
+    
+    updateWord();
+
+    
+    setInterval(updateWord, 1000);
+
+    </script>
+
+
+
+
 
 <script>
     function updateTime() {
