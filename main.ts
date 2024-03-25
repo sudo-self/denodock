@@ -173,21 +173,20 @@ async function handleRequest(request) {
     <nav>
         <ul>
             <li>
-                <h1 class="fixed left-0 right-0 top-0 text-3xl text-center">
+                <h1 class="fixed left-0 right-0 top-0 z-10 text-3xl text-center">
                     <code id="url">
-                        deno.dev/<span id="word"></span> <!----word rotation id=url--->
+                        deno.dev/<span id="word"></span> <!-- word rotation id=url -->
                     </code>
                 </h1>
             </li>
         </ul>
     </nav>
-    <div>
-   <div class="flex flex-col text-2x1 items-center">
-<div id="timeDisplay" class="text-gray-400"></div>
-</div>
-  </div>
-   <a class="github-button" href="https://github.com/sudo-self/http-request" data-color-scheme="no-preference: light; light: light; dark: light_high_contrast;" data-icon="octicon-star" data-size="large" aria-label="Star sudo-self/http-request on GitHub">Star</a>
-</header
+    <div class="flex flex-col items-center">
+        <div id="timeDisplay" class="text-gray-400 z-20"></div>
+    </div>
+    <a class="github-button" href="https://github.com/sudo-self/http-request" data-color-scheme="no-preference: light; light: light; dark: light_high_contrast;" data-icon="octicon-star" data-size="large" aria-label="Star sudo-self/http-request on GitHub">Star</a>
+</header>
+
 
 
 <!-------dicebear API ----------------->
