@@ -299,7 +299,7 @@ async function handleRequest(request) {
 
   <div class="grid-item">
             <a href="#" onclick="updateIframe('https://nes.jessejesse.com')">
-                <img src="https://api.iconify.design/mdi:nintendo-game-boy.svg?color=%237a7a7a" alt="YouTube Icon">
+                <img src="https://api.iconify.design/mdi:nintendo-game-boy.svg" alt="YouTube Icon">
                 <span></span>
             </a>
   <div class="grid-item">
