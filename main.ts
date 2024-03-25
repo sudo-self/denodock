@@ -183,7 +183,6 @@ async function handleRequest(request) {
     </nav>
     <div class="flex flex-col items-center">
     </div>
-    <a class="github-button" href="https://github.com/sudo-self/http-request" data-color-scheme="no-preference: light; light: light; dark: light_high_contrast;" data-icon="octicon-star" data-size="large" aria-label="Star sudo-self/http-request on GitHub">Star</a>
 </header>
 
 
@@ -368,7 +367,7 @@ async function handleRequest(request) {
 
 <!---------footer---------------------------->
 
-<footer class="text-center">
+ <a class="github-button" href="https://github.com/sudo-self/http-request" data-color-scheme="no-preference: light; light: light; dark: light_high_contrast;" data-icon="octicon-star" data-size="large" aria-label="Star sudo-self/http-request on GitHub">Star</a><footer class="text-center">
     <p>
         <a href="/" class="text-gray-400">denodock.deno.dev&nbsp;&copy2024</a>
     </p>
