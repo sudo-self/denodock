@@ -1,3 +1,5 @@
+// Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.
+
 import { listenAndServe } from "https://deno.land/std@0.111.0/http/server.ts";
 
 import { Time } from "https://denopkg.com/burhanahmeed/time.ts@v2.0.1/mod.ts";
