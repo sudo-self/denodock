@@ -182,12 +182,12 @@ async function handleRequest(request) {
         </ul>
     </nav>
     <div>
-      <header class="flex justify-between items-center bg-gray-200 p-4">
-    <div class="flex flex-col items-center">
-        <div id="timeDisplay" class="text-gray-400"></div> <!-- Date time -->
+   <div class="flex flex-col items-center">
     </div>
-    <a class="github-button" href="https://github.com/sudo-self/http-request" data-color-scheme="no-preference:light;light:light;dark:light_high_contrast;" data-icon="octicon-star" data-size="large" aria-label="Star sudo-self/http-request on GitHub">Star</a>
-</header>
+        <div id="timeDisplay" class="text-gray-400"></div>  <!------date time ------->
+    </div>
+   <a class="github-button" href="https://github.com/sudo-self/http-request" data-color-scheme="no-preference: light; light: light; dark: light_high_contrast;" data-icon="octicon-star" data-size="large" aria-label="Star sudo-self/http-request on GitHub">Star</a>
+</header
 
 
 <!-------dicebear API ----------------->
