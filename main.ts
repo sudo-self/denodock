@@ -318,7 +318,7 @@ async function handleRequest(request) {
                 <span></span>
             </a>
     <div class="grid-item">
-            <a href="#" onclick="updateIframe('https://www.youtube.com/')">
+            <a href="#" onclick="updateIframe('https://www.youtube.com/embed/CSPlobUn6A0?si=70EReCd3C8cjvock')">
                 <img src="https://api.iconify.design/openmoji:youtube.svg" alt="YouTube Icon">
                 <span></span>
             </a>
@@ -383,5 +383,3 @@ async function handleRequest(request) {
 }
 
 listenAndServe(":8000", handleRequest);
-
-
