@@ -364,7 +364,7 @@ async function handleRequest(request) {
 
 <footer class="text-center">
     <p>
-        <a href="/" class="text-gray-400">sudo-self&nbsp;deno.dev&nbsp;&copy2024</a>
+        <a href="/" class="text-gray-400">denodock.deno.dev&nbsp;&copy2024</a>
     </p>
 </footer>
 
