@@ -55,27 +55,7 @@ async function handleRequest(request) {
             cursor: pointer;
         }
 
-         .DenoDock-btn {
-            padding: 10px 20px;
-            background-color: gray-900;
-            color: #fff;
-            border: 2px;
-            border-color" gray-500;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-           .DenoDock-btn:hover {
-            background-color: rgba(178, 165, 211, 0.8); /* Semi-transparent background color */
-            background-image: url('https://api.dicebear.com/8.x/adventurer/svg?seed=Felix');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-
-        }
-
-
-      body {
+        body {
             margin: 0;
             padding: 0;
         }
@@ -102,18 +82,7 @@ async function handleRequest(request) {
         #avatarImage {
             margin-bottom: 20px;
         }
-
-        .buttons-container {
-            margin-top: 10px; 
-        }
-          
-
-         .container {
-            text-align: center;
-            margin-top: 1px;
-            color: white;
-        }
-
+ 
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -134,9 +103,6 @@ async function handleRequest(request) {
             text-decoration: none;
             color: #000;
         }
-
-
-       /* dock size */
 
        .grid-item img {
             width: 20px;
@@ -173,12 +139,6 @@ async function handleRequest(request) {
                 font-size: 2rem;
             }
         } 
-        
-
-       body {
-            margin: 0;
-            padding: 0;
-        }
 
         
         footer {
@@ -419,4 +379,5 @@ async function handleRequest(request) {
 }
 
 listenAndServe(":8000", handleRequest);
+
 
