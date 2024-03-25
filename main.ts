@@ -89,7 +89,7 @@ async function handleRequest(request) {
         }
 
         #myiFrame {
-            border-radius: 10px;
+            border-radius: 20px;
             display: none; 
         } 
       
@@ -102,17 +102,10 @@ async function handleRequest(request) {
             margin-bottom: 20px;
         }
 
-        #myiFrame {
-            border-radius: 10px;
-            display: none; 
-        }
         .buttons-container {
             margin-top: 10px; 
         }
           
-        #myiFrame {
-            border-radius: 10px; 
-        }
 
          .container {
             text-align: center;
@@ -125,6 +118,8 @@ async function handleRequest(request) {
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 20px;
         }
+
+       /* dock demensions */
 
         .grid-item {
             display: flex;
@@ -139,17 +134,18 @@ async function handleRequest(request) {
             color: #000;
         }
 
-        .grid-item:hover {
-            background-color: #4fdce1;
-        }
 
-        .grid-item img {
+       /* dock demensions */
+
+       .grid-item img {
             width: 20px;
             height: 20px;
             margin-right: 5px;
         }
-
        
+
+         /* this is the dock */
+    
         .grid-item:hover {
             background-color: rgba(178, 165, 211, 0.8); 
             background-image: url('https://api.dicebear.com/8.x/adventurer/svg?seed=Felix');
@@ -163,7 +159,9 @@ async function handleRequest(request) {
             font-size: 3rem; 
         }
 
-        @media (max-width: 768px) {
+         /* friendly style for mobile devices */
+
+         @media (max-width: 768px) {
             .grid-container {
                 grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
             }
@@ -175,6 +173,7 @@ async function handleRequest(request) {
             }
         } 
         
+
        body {
             margin: 0;
             padding: 0;
@@ -192,44 +191,53 @@ async function handleRequest(request) {
             width: 100%;
         }
 
+
+       /* prevent time from being over iframe */
+
         timedisplay {
             top:50px;
             }
+
     </style>
 </head>
-   <header>
-<nav>
-<ul>
-<li>
-<h1 class="fixed left-0 right-0 top-0 text-3xl text-center">
-    <code id="url">
-        deno.dev/<span id="word"></span>
-    </code>
-</h1>
-</li>
-</ul>
-</nav>
-<div>
-<div class="flex flex-col items-center">
+
+
+
+<header>
+    <nav>
+        <ul>
+            <li>
+                <h1 class="fixed left-0 right-0 top-0 text-3xl text-center">
+                    <code id="url">
+                        deno.dev/<span id="word"></span>
+                    </code>
+                </h1>
+            </li>
+        </ul>
+    </nav>
+    <div>
+        <div class="flex flex-col items-center">
+        </div>
+        <div id="timeDisplay" class="text-gray-400"></div>
     </div>
-    <div id="timeDisplay" class="text-green-500"></div>
-</div>
-
 </header>
-<body class="bg-gradient-to-br from-gray-900 to-gray-700 flex flex-col justify-center items-center font-sans text-base bg-white">
-<img id="avatarImage" src="https://api.dicebear.com/8.x/adventurer/svg?seed=Felix" height="240px" width="300px" alt="Deno Image">
-<div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-<div>
-<div class="flex flex-col items-center">
- <a href="/" onclick="updateIframe('https://deno-html-json.deno.dev')">
-    <img src="https://api.iconify.design/formkit:down.svg?color=%23f5ec00" alt="Caretdown Icon" class="h-6 w-6">
-</div>
 
-</a>
+
+
+<body class="bg-gradient-to-br from-gray-900 to-gray-700 flex flex-col justify-center items-center font-sans text-base bg-white">
+    <img id="avatarImage" src="https://api.dicebear.com/8.x/adventurer/svg?seed=Felix" height="240px" width="300px" alt="Deno Image">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div>
+            <div class="flex flex-col items-center">
+                <a href="/" onclick="updateIframe('https://deno-html-json.deno.dev')">
+                    <img src="https://api.iconify.design/formkit:down.svg?color=%23f5ec00" alt="Caretdown Icon" class="h-6 w-6">
+                </a>
+            </div>
+
 
 <script>
     const getRandomWord = () => {
-        const words = ["text", "html", "json", "server", "pdf"];
+        const words = ["text", "dev.to", "json", "server", "playground"];
         const randomIndex = Math.floor(Math.random() * words.length);
         return { word: words[randomIndex], color: getRandomDarkColor() };
     };
@@ -249,15 +257,10 @@ async function handleRequest(request) {
         wordElement.style.color = randomColor;
     }
 
-    
     updateWord();
 
-    
-    setInterval(updateWord, 1000);
-
-    </script>
-
-
+    setInterval(updateWord, 800); //time for words
+</script>
 
 
 
@@ -303,84 +306,72 @@ async function handleRequest(request) {
             return seed;
         }
     </script>
+
+
+<!-------iframe logic----------->
+
+<script>
+
+    function updateIframe(url) {
+        document.getElementById('myiFrame').src = url;
+    }
+</script>
+
    
-     <center><iframe id="myiFrame" src="" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="1" marginheight="0px" marginwidth="0px" height="450px" width="450px" allowfullscreen></iframe></center>
+
+<!------- iframe hide on start with empty src= ""  --------------->
+
+    <center><iframe id="myiFrame" src="" style="background-color: white;" name="myiFrame" scrolling="yes" frameborder="1" marginheight="0px" marginwidth="0px" height="450px" width="450px" allowfullscreen></iframe></center>
+            </a>
+
+
+ <!----- dock apps ------------------------------------------------->
+
   <div class="grid-item">
             <a href="#" onclick="updateIframe('https://tyson.jessejesse.com')">
-                <img src="https://api.iconify.design/game-icons:mailed-fist.svg?color=%231a0a53" alt="HTML Icon">
-                <span>Games</span>
+                <img src="https://api.iconify.design/mdi:nintendo-game-boy.svg?color=%237a7a7a" alt="YouTube Icon">
+                <span></span>
+            </a>
+  <div class="grid-item">
+            <a href="#" onclick="updateIframe('https://tunnel.jessejesse.com')">
+                <img src="https://api.iconify.design/skill-icons:cloudflare-dark.svg?color=%23aaaaaa" alt="HTML Icon">
+                <span></span>
             </a> 
  <div class="grid-item">
             <a href="#" onclick="updateIframe('https://www.google.com/search?igu=1')">
                 <img src="https://api.iconify.design/logos:google-icon.svg?color=%2300f900" alt="HTML Icon">
-                <span>Google</span>
+                <span></span>
             </a>
     <div class="grid-item">
             <a href="#" onclick="updateIframe('https://random.jessejesse.com')">
                 <img src="https://api.iconify.design/game-icons:chat-bubble.svg?color=%231a0a53" alt="YouTube Icon">
-                <span>Chat</span>
+                <span></span>
             </a>
     <div class="grid-item">
             <a href="#" onclick="updateIframe('https://www.youtube.com/embed/dQw4w9WgXcQ')">
                 <img src="https://api.iconify.design/openmoji:youtube.svg" alt="YouTube Icon">
-                <span>YouTube</span>
+                <span></span>
             </a>
     <div class="grid-item">
             <a href="#" onclick="generateAvatar()">
                 <img src="https://api.iconify.design/logos:deno.svg?color=%23aaaaaa" alt="deno Icon">
-                <span>New Avatar</span>
+                <span>deno.dev</span>
             </a>
      </div>
 
 
-<script>
-
-function showCurrentTime() {
-  // Get the current time
-  var currentTime = new Date();
-  
-  // Format the time as desired (e.g., hours and minutes)
-  var hours = currentTime.getHours();
-  var minutes = currentTime.getMinutes();
-  
-  // Display the current time in the specified format
-  var timeDisplay = document.getElementById("timeDisplay");
-  timeDisplay.textContent = "Welcome! The current time is: " + hours + ":" + (minutes < 10 ? "0" : "") + minutes;
-}
-</script>
+<!---------- date time --------------->
 
 <script>
-    const getRandomWord = () => {
-        const words = ["text", "html", "json", "server", "pdf"];
-        const randomIndex = Math.floor(Math.random() * words.length);
-        return { word: words[randomIndex], color: getRandomDarkColor() };
-    };
-
-    const getRandomDarkColor = () => {
-        const darkColors = ["#7b1fa2", "#512da8", "#4527a0", "#311b92", "#673ab7"];
-        return darkColors[Math.floor(Math.random() * darkColors.length)];
-    };
-
-    function updateWord() {
-        const wordElement = document.getElementById('word');
-        const randomWordObject = getRandomWord();
-        const randomWord = randomWordObject.word;
-        const randomColor = randomWordObject.color;
-
-        wordElement.textContent = randomWord;
-        wordElement.style.color = randomColor;
+    function showCurrentTime() {
+        var currentTime = new Date();
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var timeDisplay = document.getElementById("timeDisplay");
+        var formattedMinutes = (minutes < 10 ? "0" : "") + minutes;
+        timeDisplay.textContent = "Welcome! The current time is: " + hours + ":" + formattedMinutes;
     }
-
-
-
-    
-    updateWord();
-
-    
-    setInterval(updateWord, 1000);
-
-
-    </script>
+</script>
 
 
 
@@ -415,7 +406,7 @@ function showCurrentTime() {
 
 <footer class="text-center">
     <p>
-        <a href="/" class="text-gray-400">deno-html-json.deno.dev</a>
+        <a href="/" class="text-gray-400">sudo-self&nbsp;&#10084;&nbsp;deno dock&nbsp;&copy2024</a>
     </p>
 </footer>
 
@@ -423,6 +414,8 @@ function showCurrentTime() {
 
         </html>
     `;
+
+    //main.ts
 
     return new Response(response, { headers: { "content-type": "text/html; charset=UTF-8" } });
 }
