@@ -44,6 +44,7 @@ async function handleRequest(request) {
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
 
+    /* deno dock style */
     
         .close-btn {
             padding: 10px 20px;
@@ -230,11 +231,12 @@ async function handleRequest(request) {
     <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <div>
             <div class="flex flex-col items-center">
-<!--"/" close---->     <a href="/" onclick="updateIframe('https://deno-html-json.deno.dev')">
-<!-- down svg---->   <img src="https://api.iconify.design/formkit:down.svg?color=%23f5ec00" alt="Caretdown Icon" class="h-6 w-6">
+<!-"/" close iframe--->   <a href="/" onclick="updateIframe('https://deno-html-json.deno.dev')">
+<!-- svg---->   <img src="https://api.iconify.design/formkit:down.svg?color=%23f5ec00" alt="Caretdown Icon" class="h-6 w-6">
                </a>
          </div>
 
+<!-----Random word and color logic------->
 
 <script>
     const getRandomWord = () => {
@@ -263,7 +265,7 @@ async function handleRequest(request) {
     setInterval(updateWord, 800); //time for words to rotate 1000= one second//
 </script>
 
-
+<!--------date time ---------------------->
 
 <script>
     function updateTime() {
@@ -275,10 +277,13 @@ async function handleRequest(request) {
         timeDisplay.textContent = dateString.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' ' + timeString;
     }
 
-    updateTime(); // Call updateTime function to initially display the time
+    updateTime(); //display the time
 
     setInterval(updateTime, 1000); // Update time every second
 </script>
+
+
+
 
  <script>
          
@@ -286,7 +291,7 @@ async function handleRequest(request) {
             var iframe = document.getElementById('myIframe');
             iframe.style.display = 'none';
         }
-    </script>
+ </script>
 
 
    <script>
@@ -326,7 +331,7 @@ async function handleRequest(request) {
             </a>
 
 
- <!----- 5 dock apps css class "grid-items"  ------App labels place in span----->app name<---------->
+ <!----- 5 dock apps css class grid-items------App labels place in span------------->
 
   <div class="grid-item">
             <a href="#" onclick="updateIframe('https://tyson.jessejesse.com')">
@@ -395,15 +400,15 @@ async function handleRequest(request) {
     }
 </script>
 
-
+<!---------footer---------------------------->
 
 <footer class="text-center">
     <p>
-        <a href="/" class="text-gray-400">sudo-self&nbsp;&#10084;&nbsp;deno dock&nbsp;&copy2024</a>
+        <a href="/" class="text-gray-400">sudo-self&nbsp;deno.dev&nbsp;&copy2024</a>
     </p>
 </footer>
 
-
+<!---------END html----------------------------->
 
         </html>
     `;
