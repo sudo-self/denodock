@@ -204,7 +204,7 @@ async function handleRequest(request) {
 
 <script>
     const getRandomWord = () => {
-        const words = ["text", "dev.to", "json", "server", "playground"];      //can change words here//
+        const words = ["htmx", "dock", "json", "server", "playground"];      //can change words here//
         const randomIndex = Math.floor(Math.random() * words.length);
         return { word: words[randomIndex], color: getRandomDarkColor() };
     };
@@ -318,7 +318,7 @@ async function handleRequest(request) {
                 <span></span>
             </a>
     <div class="grid-item">
-            <a href="#" onclick="updateIframe('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+            <a href="#" onclick="updateIframe('https://www.youtube.com/')">
                 <img src="https://api.iconify.design/openmoji:youtube.svg" alt="YouTube Icon">
                 <span></span>
             </a>
