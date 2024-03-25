@@ -367,8 +367,10 @@ async function handleRequest(request) {
 
 <!---------footer---------------------------->
 
+
 <a class="github-button" href="https://github.com/sudo-self/http-request" data-color-scheme="no-preference: dark; light: dark; dark: dark_dimmed;" data-icon="octicon-star" data-size="large" aria-label="Star sudo-self/http-request on GitHub">Star</a>
-    <p>
+<footer>
+     <p>
         <a href="/" class="text-gray-400">denodock.deno.dev&nbsp;&copy2024</a>
     </p>
 </footer>
