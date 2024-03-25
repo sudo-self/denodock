@@ -119,7 +119,7 @@ async function handleRequest(request) {
     
         .grid-item:hover {
             background-color: rgba(178, 165, 211, 0.8); 
-            background-image: url('https://api.dicebear.com/8.x/adventurer/svg?seed=Felix');
+            background-image: url('https://nemo.jessejesse.com');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
