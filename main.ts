@@ -314,7 +314,7 @@ async function handleRequest(request) {
                 <span></span>
             </a>
     <div class="grid-item">
-            <a href="#" onclick="updateIframe('https://random.jessejesse.com')">
+            <a href="#" onclick="updateIframe('https://sms.jessejesse.com')">
                 <img src="https://api.iconify.design/game-icons:chat-bubble.svg?color=%231a0a53" alt="YouTube Icon">
                 <span></span>
             </a>
