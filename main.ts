@@ -304,7 +304,7 @@ async function handleRequest(request) {
                 <span></span>
             </a>
   <div class="grid-item">
-            <a href="#" onclick="updateIframe('https://sudo-shat.glitch.me')">
+            <a href="#" onclick="updateIframe('https://sudo-chat.glitch.me')">
                 <img src="https://api.iconify.design/skill-icons:cloudflare-dark.svg?color=%23aaaaaa" alt="HTML Icon">
                 <span></span>
             </a> 
